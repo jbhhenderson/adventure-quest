@@ -82,11 +82,11 @@ string advName = Console.ReadLine();
 // check for replay
 string choice = null;
 
-while (choice != "no") {
-choice = null;
-
 // Make a new "Adventurer" object using the "Adventurer" class
 Adventurer theAdventurer = new Adventurer(advName, advRobe, advHat);
+
+while (choice != "no") {
+choice = null;
 
 // Print description of adventurer
 Console.WriteLine(theAdventurer.GetDescription());
@@ -102,23 +102,26 @@ while (randomChallenges.Count < 5)
 
     Challenge foundChallenge = challenges[r];
 
-    challenges.Remove(foundChallenge);
-    randomChallenges.Add(foundChallenge);
+    // challenges.Remove(foundChallenge);
+    // randomChallenges.Add(foundChallenge);
 
-    // if(!randomChallenges.Contains(foundChallenge))
-    // {
-    //     randomChallenges.Add(foundChallenge);
-    // }
+    if(!randomChallenges.Contains(foundChallenge))
+    {
+        randomChallenges.Add(foundChallenge);
+    }
 }
 // pick another challenge that hasn't been chosen
 // store it in the same place
 // return list of randomly selected challenges
 
-
+Console.WriteLine($"Your awesomeness is at {theAdventurer.Awesomeness}");
+Console.WriteLine($"Successes: {theAdventurer.Successes}");
 // Loop through all the challenges and subject the Adventurer to them
 foreach (Challenge challenge in randomChallenges)
 {
     challenge.RunChallenge(theAdventurer);
+    Console.WriteLine($"Your awesomeness is at {theAdventurer.Awesomeness}");
+    Console.WriteLine($"Successes: {theAdventurer.Successes}");
 }
 
 // This code examines how Awesome the Adventurer is after completing the challenges
