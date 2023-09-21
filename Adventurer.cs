@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace Quest;
 // An instance of the Adventurer class is an object that will undergo some challenges
 public class Adventurer
@@ -12,11 +14,14 @@ public class Adventurer
     public int Awesomeness { get; set; }
 
     // A constructor to make a new Adventurer object with a given name
-    public Adventurer(string name)
+    public Adventurer(string name, Robe robe)
     {
         Name = name;
         Awesomeness = 50;
+        ColorfulRobe = robe;
     }
+
+    public Robe ColorfulRobe { get; }
 
 
     // This method returns a string that describes the Adventurer's status
@@ -43,5 +48,15 @@ public class Adventurer
         }
 
         return $"Adventurer, {Name}, is {status}";
+    }
+
+    public string GetDescription()
+    {
+        string colorString = "";
+        foreach (string color in ColorfulRobe.Colors)
+        {
+            colorString += color + ", ";
+        }
+        return $"Your adventurer, {Name}, is wearing a {colorString}robe that is {ColorfulRobe.Length} inches long.";
     }
 }
