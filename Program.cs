@@ -48,6 +48,12 @@ List<Challenge> challenges = new List<Challenge>()
 Console.WriteLine("What is your adventurer's name?");
 string advName = Console.ReadLine();
 
+// check for replay
+string choice = null;
+
+while (choice != "no") {
+choice = null;
+
 // Make a new "Adventurer" object using the "Adventurer" class
 Adventurer theAdventurer = new Adventurer(advName);
 
@@ -70,4 +76,18 @@ else if (theAdventurer.Awesomeness <= minAwesomeness)
 else
 {
     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+}
+while (choice != "yes" && choice != "no")
+    {
+        Console.WriteLine("Would you like to play again? (yes/no)");
+        choice = Console.ReadLine();
+        if (choice == "no")
+        {
+            Console.WriteLine("Thank you for playing!");
+        }
+        else if (choice != "yes") 
+        {
+            Console.WriteLine("Please only type yes or no");
+        }
+    }
 }
