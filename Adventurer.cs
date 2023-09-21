@@ -17,11 +17,11 @@ public class Adventurer
     public Adventurer(string name, Robe robe, Hat hat)
     {
         Name = name;
-        Awesomeness = 50;
+        Awesomeness = 50 +(Successes * 10);
         ColorfulRobe = robe;
         ShinyHat = hat;
     }
-
+    public int Successes { get; set; }
     public Robe ColorfulRobe { get; }
     public Hat ShinyHat { get; }
 
