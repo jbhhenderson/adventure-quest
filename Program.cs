@@ -44,6 +44,20 @@ List<Challenge> challenges = new List<Challenge>()
     favoriteBeatle
 };
 
+// create list of strings
+var colors = new List<string> {
+    "red",
+    "white",
+    "blue"
+};
+
+// create a Robe object
+Robe advRobe = new Robe()
+{
+    Colors = colors,
+    Length = 60
+};
+
 // prompt user for a name
 Console.WriteLine("What is your adventurer's name?");
 string advName = Console.ReadLine();
@@ -55,7 +69,10 @@ while (choice != "no") {
 choice = null;
 
 // Make a new "Adventurer" object using the "Adventurer" class
-Adventurer theAdventurer = new Adventurer(advName);
+Adventurer theAdventurer = new Adventurer(advName, advRobe);
+
+// Print description of adventurer
+Console.WriteLine(theAdventurer.GetDescription());
 
 // Loop through all the challenges and subject the Adventurer to them
 foreach (Challenge challenge in challenges)
