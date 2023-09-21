@@ -64,6 +64,9 @@ Hat advHat = new()
     ShininessLevel = 5
 };
 
+// create an instance of a Prize
+Prize advPrize = new("1GP");
+
 // prompt user for a name
 Console.WriteLine("What is your adventurer's name?");
 string advName = Console.ReadLine();
@@ -100,6 +103,7 @@ else
 {
     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
 }
+advPrize.ShowPrize(theAdventurer);
 while (choice != "yes" && choice != "no")
     {
         Console.WriteLine("Would you like to play again? (yes/no)");
