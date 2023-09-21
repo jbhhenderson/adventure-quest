@@ -58,6 +58,12 @@ Robe advRobe = new Robe()
     Length = 60
 };
 
+//create a Hat object
+Hat advHat = new()
+{
+    ShininessLevel = 5
+};
+
 // prompt user for a name
 Console.WriteLine("What is your adventurer's name?");
 string advName = Console.ReadLine();
@@ -69,7 +75,7 @@ while (choice != "no") {
 choice = null;
 
 // Make a new "Adventurer" object using the "Adventurer" class
-Adventurer theAdventurer = new Adventurer(advName, advRobe);
+Adventurer theAdventurer = new Adventurer(advName, advRobe, advHat);
 
 // Print description of adventurer
 Console.WriteLine(theAdventurer.GetDescription());

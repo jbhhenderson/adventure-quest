@@ -14,15 +14,16 @@ public class Adventurer
     public int Awesomeness { get; set; }
 
     // A constructor to make a new Adventurer object with a given name
-    public Adventurer(string name, Robe robe)
+    public Adventurer(string name, Robe robe, Hat hat)
     {
         Name = name;
         Awesomeness = 50;
         ColorfulRobe = robe;
+        ShinyHat = hat;
     }
 
     public Robe ColorfulRobe { get; }
-
+    public Hat ShinyHat { get; }
 
     // This method returns a string that describes the Adventurer's status
     // Note one way to describe what this method does is:
@@ -57,6 +58,6 @@ public class Adventurer
         {
             colorString += color + ", ";
         }
-        return $"Your adventurer, {Name}, is wearing a {colorString}robe that is {ColorfulRobe.Length} inches long.";
+        return $"Your adventurer, {Name}, is wearing a {colorString}robe that is {ColorfulRobe.Length} inches long, and a hat that is {ShinyHat.ShininessDescription}.";
     }
 }
